@@ -83,63 +83,75 @@
 // }
 
 
-#include<iostream>
+#include <iostream>
 #include <iomanip>
 using namespace std;
+
 int main() {
-    cout << setiosflags(ios::fixed);
-    cout << setiosflags(ios::showpoint);
-    cout << setprecision(3);
-    cout << "\t\t\t switch base marksheet" << endl;
-    int total, ict, physics, maths, english;
-    int avg;
-    char letter_grade = 'z';
-    cout << "plz enter marks of ict[0-100}"<<endl;
+   cout << setiosflags(ios::fixed);
+  cout << setiosflags(ios::showpoint);
+  cout << setprecision(3);
+    cout << "\t\t\t\t\t\t switch base marksheet" << endl;
+
+   int total, ict, physics, math, english; 
+   int avg;
+   char letter_grade = 'z';
+
+    cout << "Please enter marks of ICT [0-100]: " << endl;
     cin >> ict;
     ict = (ict > 100) ? -1 : ict;
-    cout << "plz enter marks of math{0-100}" << endl;
+
+    cout << "Please enter marks of Math [0-100]: " << endl;
     cin >> math;
-    math = (math > q00) ? -1 : math;
-    cout << "plz enter marks of physics{0-100" << endl;
+    math = (math > 100) ? -1 : math; 
+
+    cout << "Please enter marks of Physics [0-100]: " << endl;
     cin >> physics;
     physics = (physics > 100) ? -1 : physics;
-    cout << "plz enter marks of english[0 - 100]" << endl;
+
+    cout << "Please enter marks of English [0-100]: " << endl;
     cin >> english;
     english = (english > 100) ? -1 : english;
+
     total = ict + math + physics + english;
     avg = total / 4;
-    switch (avg / 10)
-    {
-    case 10:case9: {
-        cout << " excellent performance" << endl;
+
+    switch (avg / 10) {
+    case 10:
+    case 9: {
+        cout << "Excellent performance" << endl;
         letter_grade = 'A';
         break;
     }
-           case 8: {
-           cout << " very good performance" << endl;
-           letter_grade = 'B';
-           break;
+    case 8: {
+        cout << "Very good performance" << endl;
+        letter_grade = 'B';
+        break;
     }
-   case7 : {
-       cout << "good" << endl;
-       letter_grade = 'C';
-       break;
-       }
-case6: {
-   cout << "Do hard work" << endl;
-   letter_grade = 'D';
-   break;
-   }
-case 5: {
-cout << "you are fail" << endl;
-letter_grade = 'F';
-break;
-}
+    case 7: {
+        cout << "Good" << endl;
+        letter_grade = 'C';
+        break;
     }
-    cout << "your letter Grade is " << letter_grade << endl;
-    cout << "your percentage is" << avg << endl;
+    case 6: {
+        cout << "Do hard work" << endl;
+        letter_grade = 'D';
+        break;
+    }
+    case 5: {
+        cout << "You are fail" << endl;
+        letter_grade = 'F';
+        break;
+    }
+    default: {
+        cout << "Invalid average score" << endl;
+        letter_grade = 'F';
+        break;
+    }
+    }
+
+    cout << "Your letter Grade is " << letter_grade << endl;
+    cout << "Your percentage is " << avg << "%" << endl;
+
     return 0;
-
-
-
 }
